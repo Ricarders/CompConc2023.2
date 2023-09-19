@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-int num_threads;
+int num_threads; // Número de threads a serem criadas
 pthread_mutex_t mutex;
 pthread_cond_t cond;
-int counter = 0;
+int counter = 0; // Variável para contar o número de threads que chegaram à barreira
 
+// Função para a barreira
 void barreira() {
     pthread_mutex_lock(&mutex);
     counter++;
@@ -19,6 +20,7 @@ void barreira() {
     }
 
     else {
+        // Todas as threads chegaram à barreira, sinalize para todas continuarem
         counter = 0;
         pthread_cond_broadcast(&cond);
     }
@@ -26,6 +28,7 @@ void barreira() {
     pthread_mutex_unlock(&mutex);
 }
 
+// Função executada pelas threads
 void *thread_function(void *thread_id) {
     int id = *(int *)thread_id;
 
