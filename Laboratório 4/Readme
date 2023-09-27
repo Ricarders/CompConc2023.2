@@ -1,0 +1,30 @@
+Nesta pasta temos os 5 códigos passados pela professora na atividade do laboratório, mais 2 códigos que foram feitos por mim.
+
+Passados pela professora:
+- list_int.c
+- list_int.h
+- main_list.c
+- main_list_rwlock.c
+- timer.h
+
+  main_list.c deve ser compilado com o seguinte comando:
+    gcc -o main_list main_list.c list_int.c -lpthread -Wall
+
+  main_list_rwlock.c deve ser compilado com o seguinte comando:
+    gcc -o main_list_rwlock main_list_rwlock.c list_int.c -lpthread -Wall
+
+Feitos por mim:
+- main_list_custom.c
+- comparador.c
+
+  main_list_custom.c é de fato o código da implementação pedida no laboratório e deve ser compilado com o seguinte comando:
+    gcc -o main_list_custom main_list_custom.c list_int.c -lpthread -Wall
+
+  comparador.c é um comparador que chama os arquivos executaveis criados pelas 3 diferentes versões deste problema e exibe a saída de cada um consecutivamente.
+  comparador.c deve ser compilado com o seguinte comando:
+    gcc -o comparador comparador.c -lpthread -Wall
+
+  comparador deve ser executado com o seguinte comando:
+    ./comparador <número de threads>
+
+*Não se esqueça de gerar todos os executáveis antes de usar o comparador*
