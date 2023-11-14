@@ -1,3 +1,6 @@
+// Nome - Ricardo P. Silva Filho
+// DRE - 118068055
+
 import java.util.LinkedList;
 
 // Classe que define um pool de threads
